@@ -1,0 +1,22 @@
+{
+  "name": "todosAPI",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "client": "npm run start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "nodemon index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^3.5.0",
+    "cors": "^2.8.4",
+    "express": "^4.16.2",
+    "mongoose": "^4.12.1",
+    "nodemon": "^1.12.1"
+  }
+}
