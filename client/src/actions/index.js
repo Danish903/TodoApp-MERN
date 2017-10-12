@@ -1,7 +1,7 @@
 // import uuid from "uuid";
 import axios from 'axios';
 
-let url = "http://simple-todo-app-api-danish903.c9users.io:8081/api/todos";
+let url = "/api/todos";
 
 export const getTodos = () => {
     return async(dispatch) => {
@@ -24,7 +24,7 @@ export const createTodo = ({ _id, name = "", completed = false } = {}) => {
 
 export const startCreateTodo = (todo) => {
     return async(dispatch) => {
-        const res = await axios.post(url, todo);
+        const res = await axios.post("/api/todos/", todo);
         dispatch(createTodo(res.data))
     }
 };
@@ -38,8 +38,8 @@ export const deleteTodo = ({ id } = {}) => {
 };
 export const startDeleteTodo = ({ id }) => {
     return async (dispatch) => {
-    
-        await axios.delete(`${url}/${id}`);
+
+        await axios.delete(`/api/todos/${id}`);
         dispatch(deleteTodo({ id }));
     };
 };
@@ -54,7 +54,7 @@ export const startEditTodo = (_id, updates) => {
     return async (dispatch) => {
         //console.log("id: ", _id);
         //console.log("updates", updates);
-        const res = await axios.put(`${url}/${_id}`, updates);
+        const res = await axios.put(`/api/todos/${_id}`, updates);
         dispatch(editTodo(_id, res.data));
     };
 };

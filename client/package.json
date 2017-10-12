@@ -12,6 +12,11 @@
     "redux-thunk": "^2.2.0",
     "uuid": "^3.1.0"
   },
+  "proxy": {
+    "/api/*": {
+      "target": "http://localhost:8081"
+    }
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
